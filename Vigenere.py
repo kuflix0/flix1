@@ -33,20 +33,15 @@ def decodeChar(gText, schluessel):
 
 
 def verschlüsseln(kText, schluessel):
-    if len(schluessel) < len(kText):
-        raise Exception("schlüssel zu kurz")
     gText = ""
     for i in range(0, len(kText)):
-        gText += encodeChar(kText[i], schluessel[i])
+        gText += encodeChar(kText[i], schluessel[i % len(schluessel)])
 
     return gText
 
 
 def entschlüsseln(gText, schluessel):
-    if len(schluessel) < len(gText):
-        raise Exception("schlüssel zu kurz")
-
     kText = ""
     for i in range(0, len(gText)):
-        kText += decodeChar(gText[i], schluessel[i])
+        kText += decodeChar(gText[i], schluessel[i % len(schluessel)])
     return kText

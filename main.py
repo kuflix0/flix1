@@ -2,7 +2,7 @@ import os
 import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
-from otp import verschlüsseln, entschlüsseln
+from Vigenere import verschlüsseln, entschlüsseln
 
 print(os.environ.get('PYTHONPATH'))
 
