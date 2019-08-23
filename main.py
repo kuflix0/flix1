@@ -4,6 +4,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 from otp import verschlüsseln, entschlüsseln
 
+print(os.environ.get('PYTHONPATH'))
 
 def main():
     cont = True
