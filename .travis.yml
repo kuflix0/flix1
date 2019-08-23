@@ -5,7 +5,7 @@ install:
 
 # Run the unit test
 script:
-  - coverage run test_otp.py
+  - coverage run test_Vigenere.py
 
 # Push the results back to codecov
 after_success:
