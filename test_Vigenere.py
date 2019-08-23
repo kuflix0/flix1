@@ -1,6 +1,6 @@
 import os
 from unittest import TestCase
-from otp import verschlüsseln, entschlüsseln, buchstabeZUZahl
+from Vigenere import verschlüsseln, entschlüsseln, buchstabeZUZahl
 
 class TestOtp(TestCase):
     def test_verschlüsseln(self):
@@ -24,12 +24,6 @@ class TestOtp(TestCase):
 
         self.assertTrue('ungültiges Zeichen' in str (context.exception))
 
-    def test_exception_entschlüssln_schluessel_kurz(self):
-        with self.assertRaises(Exception) as context:
-                entschlüsseln("wasd", "a")
-
-        self.assertTrue('schlüssel zu kurz' in str(context.exception))
-
     def test_exception_entschlüssln_schluessel_uz(self):
         with self.assertRaises(Exception) as context:
             entschlüsseln("was", "+w+#")
@@ -41,12 +35,6 @@ class TestOtp(TestCase):
             verschlüsseln("-", "wasd")
 
         self.assertTrue('ungültiges Zeichen' in str(context.exception))
-
-    def test_exception_verschlüssln_schluessel_kurz(self):
-        with self.assertRaises(Exception) as context:
-            verschlüsseln("wasd", "a")
-
-        self.assertTrue('schlüssel zu kurz' in str(context.exception))
 
     def test_exception_verschlüssln_schluessel_uz(self):
         with self.assertRaises(Exception) as context:
