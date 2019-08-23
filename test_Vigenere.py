@@ -1,6 +1,6 @@
 import os
 from unittest import TestCase
-from otp import verschlüsseln, entschlüsseln, buchstabeZUZahl
+from Vigenere import verschlüsseln, entschlüsseln, buchstabeZUZahl
 
 class TestOtp(TestCase):
     def test_verschlüsseln(self):
