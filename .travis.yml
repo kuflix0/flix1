@@ -1,2 +1,12 @@
 language: python
-script: pytest
+
+install:
+  - pip install codecov
+
+# Run the unit test
+script:
+  - coverage run test_otp.py
+
+# Push the results back to codecov
+after_success:
+  - codecov

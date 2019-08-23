@@ -1,5 +1,6 @@
 import os
-from unittest import TestCase
+from unittest import TestCase,main
+
 from otp import verschlüsseln, entschlüsseln, buchstabeZUZahl
 
 class TestOtp(TestCase):
@@ -53,3 +54,6 @@ class TestOtp(TestCase):
             verschlüsseln("was", "+w+#")
 
         self.assertTrue('ungültiges Zeichen' in str(context.exception))
+
+if __name__ == '__main__':
+    main()
